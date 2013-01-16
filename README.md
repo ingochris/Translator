@@ -4,7 +4,7 @@ To give this a go, you need Chrome 25+ installed, which probably means you need 
 
 <https://www.google.com/intl/en/chrome/browser/beta.html>
 
-Open index.html and enjoy!
+Open <http://khoomeister.github.com/web-speech-api-example/> to give it a go.
 
 Sources
 -------
