@@ -3,19 +3,12 @@ if window.webkitSpeechRecognition
 	recognition.continuous = true # if false, speech recognition will end when the user stops talking, otherwise it keeps on recording until it is stopped manually
 	recognition.interimResults = false # if false, the only results returned by the recognizer are final and will not change
 
-	finalTranscript = null
-
-	recognition.onresult = (event) ->
-		transcript = ''
-		for i in [event.resultIndex..event.results.length - 1] by 1
-			if event.results[i].isFinal
-				transcript += event.results[i][0].transcript
-		$('#transcript').text $('#transcript').text() + transcript
+	recognition.onresult = (event) -> $('#transcript').text $('#transcript').text() + (event.results[i][0].transcript for i in [event.resultIndex..event.results.length - 1] by 1).join('')
 
 	$('#startStopButton').on 'click', ->
 		if this.innerText == 'Start'
 			this.innerText = 'Stop'
-			recognition.lang = 'en-AU'
+			recognition.lang = 'en-AU' # see https://github.com/GoogleChrome/webplatform-samples/blob/master/webspeechdemo/webspeechdemo.html#L138 for other languages
 			recognition.start()
 		else
 			this.innerText = 'Start'
@@ -26,4 +19,3 @@ else
 # Sources
 # -------
 # http://updates.html5rocks.com/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API
-# https://github.com/GoogleChrome/webplatform-samples/tree/master/webspeechdemo
