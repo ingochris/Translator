@@ -19,3 +19,34 @@ else
 # Sources
 # -------
 # http://updates.html5rocks.com/2013/01/Voice-Driven-Web-Apps-Introduction-to-the-Web-Speech-API
+
+###
+TODOCK:
+use div with contenteditable="true"
+
+if webkitSpeechRecognition
+	$recordButton = $('#recordButton')
+	$transcript = $('#transcript')
+
+	recognising = false
+
+	recognition = new webkitSpeechRecognition()
+	recognition.continuous = true
+	recognition.interimResults = true
+	recognition.lang = 'en-AU'
+	recognition.onstart = -> $recordButton.prop 'src', '/static/images/mic-animate.gif'
+	recognition.onend = ->
+		$recordButton.prop 'src', '/static/images/mic.gif'
+		recognising = false
+	recognition.onresult = (event) ->
+		finalTranscript = ''
+		interimTranscript = ''
+		for i in [event.resultIndex..event.results.length - 1] by 1
+			if event.results[i].isFinal
+				finalTranscript += event.results[i][0].transcript
+			else
+				interimTranscript += event.results[i][0].transcript
+
+		$('.interim-transcript').remove()
+		$transcript.html "#{$transcript.html()}#{finalTranscript}<span class='interim-transcript'>#{interimTranscript}</span>"
+###
