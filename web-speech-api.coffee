@@ -34,9 +34,9 @@ if webkitSpeechRecognition
 	recognition.continuous = true
 	recognition.interimResults = true
 	recognition.lang = 'en-AU'
-	recognition.onstart = -> $recordButton.prop 'src', '/static/images/mic-animate.gif'
+	recognition.onstart = -> $recordButton.prop 'src', 'images/mic-animate.gif'
 	recognition.onend = ->
-		$recordButton.prop 'src', '/static/images/mic.gif'
+		$recordButton.prop 'src', 'images/mic.gif'
 		recognising = false
 	recognition.onresult = (event) ->
 		finalTranscript = ''
@@ -49,4 +49,12 @@ if webkitSpeechRecognition
 
 		$('.interim-transcript').remove()
 		$transcript.html "#{$transcript.html()}#{finalTranscript}<span class='interim-transcript'>#{interimTranscript}</span>"
+
+	$recordButton.on 'click', ->
+		if recognising
+			recognition.stop()
+		else
+			$recordButton.prop 'src', 'images/mic-slash.gif'
+			recognition.start()
+			recognising = true
 ###
