@@ -10,9 +10,12 @@
 			Transcript:
 			<textarea id="transcript" style="width: 100%; height: 400px" ></textarea>
 		</p>
-		<p><strong>x-webkit-speech:</strong></p>
-		<p><input type="text" x-webkit-speech /></p>
-
+		
+<div class="compact marquee" id="div_language">
+          <select id="select_language" onchange="updateCountry()">
+            <option value="1">Bahasa Indonesia</option><option value="6">English</option><option value="7">Español</option><option value="29">中文</option>  <select id="select_dialect" style="visibility: visible;">&nbsp;&nbsp; <select id="select_dialect" style="visibility: visible;">
+            <option value="en-AU">Australia</option><option value="en-CA">Canada</option><option value="en-IN">India</option><option value="en-NZ">New Zealand</option><option value="en-ZA">South Africa</option><option value="en-GB">United Kingdom</option><option value="en-US">United States</option></select>
+        </div>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 		<script src="web-speech-api.coffee" type="text/coffeescript"></script>
 		<script src="coffee-script-1.4.0.min.js"></script>
