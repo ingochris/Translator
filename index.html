@@ -1,24 +1,38 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Google Chrome Speech API example</title>
-	</head>
-	<body>
-		<p><strong>Web Speech API:</strong></p>
-		<p><button id="startStopButton">Start</button></p>
-		<p>
-			Transcript:
-			<textarea id="transcript" style="width: 100%; height: 400px" ></textarea>
-		</p>
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset134 STHeitiSC-Light;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-		
-<div class="compact marquee" id="div_language">
-          <select id="select_language" onchange="updateCountry()">
-            <option value="1">Bahasa Indonesia</option><option value="6">English</option><option value="7">Español</option><option value="29">中文</option>  <select id="select_dialect" style="visibility: visible;">&nbsp;&nbsp; <select id="select_dialect" style="visibility: visible;">
-            <option value="en-AU">Australia</option><option value="en-CA">Canada</option><option value="en-IN">India</option><option value="en-NZ">New Zealand</option><option value="en-ZA">South Africa</option><option value="en-GB">United Kingdom</option><option value="en-US">United States</option></select>
-        </div>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-		<script src="web-speech-api.coffee" type="text/coffeescript"></script>
-		<script src="coffee-script-1.4.0.min.js"></script>
-	</body>
-</html>
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html>\
+<body>\
+<body bgcolor="#6495ED">\
+\
+	<div id="header"><center>\
+	<h1><font size=15> Web Speech API</font size></h1>\
+</center>\
+</div>\
+	<div id="nav">\
+<p><button id="startStopButton"><img src="https://i.imgur.com/wMHxwD1.gif" alt="mic" height= "20" width="20"/></button></p>\
+<div class="compact marquee" id="div_language"> \
+	<select id="select_language" onchange="updateCountry()"> \
+		<option value="1">Bahasa Indonesia</option> <option value="6">English</option><option value="7">Espa\'f1ol</option><option value="29">
+\f1 \'d6\'d0\'ce\'c4
+\f0 </option>  <select id="select_dialect" style="visibility: visible;">&nbsp;&nbsp; <select id="select_dialect" style="visibility: visible;">\
+		<option value="en-AU">Australia</option><option value="en-CA">Canada</option><option value="en-IN">India</option><option value="en-NZ">New Zealand</option><option value="en-ZA">South Africa</option><option value="en-GB">United Kingdom</option><option value="en-US">United States</option></select>\
+	</div>\
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>\
+		<script src="web-speech-api.coffee" type="text/coffeescript"></script>\
+		<script src="coffee-script-1.4.0.min.js"></script>\
+	</div>\
+	<div id="section">\
+	<h2>\
+		<p>\
+			Translation:<br>\
+			<textarea id="transcript" style="width: 500px; height: 250px" ></textarea>\
+                </p>\
+	</h2>\
+	</div>\
+	</body>\
+</html>}
